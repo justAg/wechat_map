@@ -38,6 +38,9 @@ $(document).ready(function() {
     getAccessToken: function() {
       $.ajax({
         url: 'https://api.weixin.qq.com/cgi-bin/token',
+        headers:{'Content-Type': 'application/json',
+"Access-Control-Allow-Origin": "*",
+'Accept': 'application/json'},
         data: {
           grant_type: 'client_credential',
           appid: 'wx47c40ae2395911a6',
