@@ -1,0 +1,60 @@
+
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="http://illuminatorslab.sinacloud.net/favicon.ico" />
+
+    <title>寻找停车场</title>
+
+    <!--自定义样式-->
+    <link href="css/index.css" rel="stylesheet">
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  的娃说
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+/*!
+ * Powered by uglifiyJS v2.6.1, Build by http://tool.uis.cc/jsmin/
+ * build time: Sun Sep 17 2017 11:48:37 GMT+0300 (FLE 紊鋌ゆ��)
+ */
+$(document).ready(function() {
+  ({
+    init: function() {
+      var self = this;
+      self.initData();
+    },
+    initData: function() {
+      var self = this;
+      self.getAccessToken();
+    },
+    getAccessToken: function() {
+      $.ajax({
+        url: 'https://api.weixin.qq.com/cgi-bin/token',
+        data: {
+          grant_type: 'client_credential',
+          appid: 'wx47c40ae2395911a6',
+          secret: '27b9f57d25694d693fa31ebe57f58550'
+        },
+        type: "GET",
+        dataType: "JSON",
+        success: function(result) {
+          // if (result['code'] != 200) {
+          // alert(result['msg']);
+          // return false;
+          // }
+        }
+      });
+    }
+  }).init();
+});
+</script>
+</body>
+</html>
