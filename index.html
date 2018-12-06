@@ -38,6 +38,11 @@ $(document).ready(function() {
     getAccessToken: function() {
       $.ajax({
         url: 'https://api.weixin.qq.com/cgi-bin/token',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader("Content-Type");
+          xhr.setRequestHeader("Access-Control-Allow-Origin");
+          xhr.setRequestHeader("Accept");
+         },
         headers:{'Content-Type': 'application/json',
 "Access-Control-Allow-Origin": "*",
 'Accept': 'application/json'},
