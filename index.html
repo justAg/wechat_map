@@ -10,7 +10,7 @@
     <title>寻找停车场</title>
 
     <!--自定义样式-->
-    <link href="css/index.css" rel="stylesheet">
+    <link href="../wechat_map/css/index.css" rel="stylesheet">
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.12.4.min.js"></script>
+<script src="../wechat_map/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 /*!
  * Powered by uglifiyJS v2.6.1, Build by http://tool.uis.cc/jsmin/
@@ -33,27 +33,23 @@ $(document).ready(function() {
     },
     initData: function() {
       var self = this;
-      self.getAccessToken();
+      // self.getAccessToken();
     },
     getAccessToken: function() {
-      $.getJSON('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx47c40ae2395911a6&secret=27b9f57d25694d693fa31ebe57f58550',function(json) {
-        console.log('ffff')
-        console.log(json)
-      })
-      // $.ajax({
-      //   url: 'https://api.weixin.qq.com/cgi-bin/token',
-      //   data: {
-      //     grant_type: 'client_credential',
-      //     appid: 'wx47c40ae2395911a6',
-      //     secret: '27b9f57d25694d693fa31ebe57f58550'
-      //   },
-      //   type: "GET",
-      //   dataType: "jsonp",
-      //   success: function(result) {
-      //     console.log('ddddd')
-      //     console.log(result)
-      //   }
-      // });
+      $.ajax({
+        url: 'https://api.weixin.qq.com/cgi-bin/token',
+        data: {
+          grant_type: 'client_credential',
+          appid: 'wx47c40ae2395911a6',
+          secret: '27b9f57d25694d693fa31ebe57f58550'
+        },
+        type: "GET",
+        dataType: "jsonp",
+        success: function(result) {
+          console.log('ddddd')
+          console.log(result)
+        }
+      });
     }
   }).init();
 });
